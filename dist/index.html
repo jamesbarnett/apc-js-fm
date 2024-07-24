@@ -1,23 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Article Preview Component</title>
-    <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" href="data:text/css;base64,QGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6IE1hbnJvcGU7CiAgZm9udC1kaXNwbGF5OiBzd2FwOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogNTAwOwogIHNyYzogdXJsKCJmb250cy9tYW5yb3BlLm1lZGl1bS53b2ZmMiIpIGZvcm1hdCgid29mZjIiKTsKfQoKQGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6IE1hbnJvcGU7CiAgZm9udC1kaXNwbGF5OiBzd2FwOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogNzAwOwogIHNyYzogdXJsKCJmb250cy9tYW5yb3BlLmJvbGQud29mZjIiKSBmb3JtYXQoIndvZmYyIik7Cn0KCjpyb290IHsKICAtLWZzLWJhc2U6IDAuODEyNXJlbTsKICAtLWZzLXNtYWxsOiAwLjc1cmVtOwogIC0tZnMtbGFyZ2U6IDAuOTM3NXJlbTsKCiAgLS1mdy01MDA6IDUwMDsKICAtLWZ3LTcwMDogNzAwOwoKICAtLWNsci1ncmF5LWJsdWUtOTAwOiBoc2woMjE3LCAxOSUsIDM1JSk7CiAgLS1jbHItZGFyay1ibHVlOiBoc2woMjE0LCAxNyUsIDUxJSk7CiAgLS1jbHItZ3JheS1ibHVlLTUwMDogaHNsKDIxMiwgMjMlLCA2OSUpOwogIC0tY2xyLWdyYXktYmx1ZS0xMDA6IGhzbCgyMTAsIDQ2JSwgOTUlKTsKCiAgLS1ib3JkZXItcmFkaXVzOiAxcmVtOwp9CgovKiBBbmR5IEJlbGwgcmVzZXQgKi8KLyogQm94IHNpemluZyBydWxlcyAqLwoqLAoqOjpiZWZvcmUsCio6OmFmdGVyIHsKICBib3gtc2l6aW5nOiBib3JkZXItYm94Owp9CgovKiBSZW1vdmUgZGVmYXVsdCBwYWRkaW5nICovCnVsW2NsYXNzXSwKb2xbY2xhc3NdIHsKICBwYWRkaW5nOiAwOwp9CgovKiBSZW1vdmUgZGVmYXVsdCBtYXJnaW4gKi8KYm9keSwKaDEsCmgyLApoMywKaDQsCnAsCnVsW2NsYXNzXSwKb2xbY2xhc3NdLApsaSwKZmlndXJlLApmaWdjYXB0aW9uLApibG9ja3F1b3RlLApkbCwKZGQgewogIG1hcmdpbjogMDsKfQoKLyogU2V0IGNvcmUgYm9keSBkZWZhdWx0cyAqLwpib2R5IHsKICBtaW4taGVpZ2h0OiAxMDB2aDsKICBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDsKICB0ZXh0LXJlbmRlcmluZzogb3B0aW1pemVTcGVlZDsKfQoKLyogUmVtb3ZlIGxpc3Qgc3R5bGVzIG9uIHVsLCBvbCBlbGVtZW50cyB3aXRoIGEgY2xhc3MgYXR0cmlidXRlICovCnVsW2NsYXNzXSwKb2xbY2xhc3NdIHsKICBsaXN0LXN0eWxlOiBub25lOwp9CgovKiBBIGVsZW1lbnRzIHRoYXQgZG9uJ3QgaGF2ZSBhIGNsYXNzIGdldCBkZWZhdWx0IHN0eWxlcyAqLwphOm5vdChbY2xhc3NdKSB7CiAgdGV4dC1kZWNvcmF0aW9uLXNraXAtaW5rOiBhdXRvOwp9CgovKiBNYWtlIGltYWdlcyBlYXNpZXIgdG8gd29yayB3aXRoICovCmltZyB7CiAgbWF4LXdpZHRoOiAxMDAlOwogIGRpc3BsYXk6IGJsb2NrOwp9CgovKiBOYXR1cmFsIGZsb3cgYW5kIHJoeXRobSBpbiBhcnRpY2xlcyBieSBkZWZhdWx0ICovCmFydGljbGUgPiAqICsgKiB7CiAgbWFyZ2luLXRvcDogMWVtOwp9CgovKiBJbmhlcml0IGZvbnRzIGZvciBpbnB1dHMgYW5kIGJ1dHRvbnMgKi8KaW5wdXQsCmJ1dHRvbiwKdGV4dGFyZWEsCnNlbGVjdCB7CiAgZm9udDogaW5oZXJpdDsKfQoKLyogUmVtb3ZlIGFsbCBhbmltYXRpb25zIGFuZCB0cmFuc2l0aW9ucyBmb3IgcGVvcGxlIHRoYXQgcHJlZmVyIG5vdCB0byBzZWUgdGhlbSAqLwpAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IHJlZHVjZSkgewogICogewogICAgYW5pbWF0aW9uLWR1cmF0aW9uOiAwLjAxbXMgIWltcG9ydGFudDsKICAgIGFuaW1hdGlvbi1pdGVyYXRpb24tY291bnQ6IDEgIWltcG9ydGFudDsKICAgIHRyYW5zaXRpb24tZHVyYXRpb246IDAuMDFtcyAhaW1wb3J0YW50OwogICAgc2Nyb2xsLWJlaGF2aW9yOiBhdXRvICFpbXBvcnRhbnQ7CiAgfQp9CgovKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqIEVuZCByZXNldCwgc3RhcnQgdXRpbHMgKioqKioqKioqKioqKiovCi5mbG93ID4gKiArICogewogIG1hcmdpbi10b3A6IHZhcigtLWZsb3ctc3BhY2UsIDFlbSk7Cn0KCmJvZHkgewogIGRpc3BsYXk6IGZsZXg7CiAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICBjb2xvcjogdmFyKC0tY2xyLWdyYXktYmx1ZS05MDApOwogIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWNsci1ncmF5LWJsdWUtMTAwKTsKICBmb250LWZhbWlseTogTWFucm9wZSwgc2FuczsKICBmb250LXNpemU6IHZhcigtLWZzLWJhc2UpIDI7CiAgZm9udC13ZWlnaHQ6IHZhcigtLWZzLTUwMCk7Cn0KCm1haW4gewogIGJhY2tncm91bmQ6IHZhcigtLWNsci1ncmF5LWJsdWUtMTAwKTsKfQoKLndyYXBwZXIgewogIG1hcmdpbi1pbmxpbmU6IGF1dG87CiAgcGFkZGluZy1pbmxpbmU6IDByZW07CiAgbWF4LXdpZHRoOiA0MGNoOwp9CgouY29udGVudC1ibG9jayB7CiAgcGFkZGluZy1pbmxpbmU6IDJyZW07CiAgbWFyZ2luLWlubGluZTogYXV0bzsKfQoKLmFydGljbGUtcHJldmlldyB7CiAgYmFja2dyb3VuZDogd2hpdGU7CiAgYm9yZGVyLXJhZGl1czogdmFyKC0tYm9yZGVyLXJhZGl1cyk7Cn0KCi5hcnRpY2xlLXByZXZpZXcgPiBpbWc6Zmlyc3QtY2hpbGQgewogIGJvcmRlci1yYWRpdXM6IHZhcigtLWJvcmRlci1yYWRpdXMpIHZhcigtLWJvcmRlci1yYWRpdXMpIDByZW0gMHJlbTsKICBoZWlnaHQ6IDIwMHB4OwogIHdpZHRoOiAxMDAlOwogIG9iamVjdC1maXQ6IGNvdmVyOwogIG9iamVjdC1wb3NpdGlvbjogMCAtM2VtOwp9Cgouc3BvdC1jb3B5ID4gaDEgewogIGZvbnQtc2l6ZTogdmFyKC0tZnMtbGFyZ2UpOwogIGxpbmUtaGVpZ2h0OiAxLjY7CiAgcGFkZGluZy1ib3R0b206IDAuNXJlbTsKICBwYWRkaW5nLXRvcDogMXJlbTsKfQoKLnNwb3QtY29weSA+IHAgewogIGNvbG9yOiB2YXIoLS1jbHItZGFyay1ibHVlKTsKICBmb250LXNpemU6IHZhcigtLWZzLWJhc2UpOwp9CgouYXV0aG9yIHsKICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiByb3c7CiAgZ2FwOiAxcmVtOwogIHBhZGRpbmctdG9wOiAxcmVtOwogIHBhZGRpbmctYm90dG9tOiAxcmVtOwogIG1hcmdpbi10b3A6IDFyZW07CiAgbWFyZ2luLWJvdHRvbTogMXJlbTsKfQoKLmF1dGhvciBkaXYgewogIGRpc3BsYXk6IGZsZXg7CiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsKICBhbGlnbi1pdGVtczogZmxleC1zdGFydDsKICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKfQoKLmF1dGhvciBpbWc6Zmlyc3QtY2hpbGQgewogIGJvcmRlci1yYWRpdXM6IDUwJTsKICBoZWlnaHQ6IDIuNXJlbTsKICBhc3BlY3QtcmF0aW86IDE7Cn0KCi5hdXRob3IgaDIgewogIGZvbnQtc2l6ZTogdmFyKC0tZnMtYmFzZSk7CiAgbGluZS1oZWlnaHQ6IDEuNjsKfQoKLmF1dGhvciB0aW1lIHsKICBjb2xvcjogdmFyKC0tY2xyLWRhcmstYmx1ZSk7CiAgZm9udC1zaXplOiB2YXIoLS1mcy1zbWFsbCk7Cn0KCi5hdXRob3IgI3NoYXJlIHsKICBkaXNwbGF5OiBibG9jazsKICBib3JkZXI6IDA7CiAgYm9yZGVyLXJhZGl1czogNTAlOwogIGJhY2tncm91bmQ6IHVybCgiLi9pbWFnZXMvaWNvbi1zaGFyZS5zdmciKSwgdmFyKC0tY2xyLWdyYXktYmx1ZS0xMDApOwogIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7CiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyOwogIGhlaWdodDogMnJlbTsKICB3aWR0aDogMnJlbTsKICBtYXJnaW4tbGVmdDogYXV0bzsKfQo=" media="all"> 
-    <script type="module" crossorigin src="/apc-js-fm/assets/index-B5Qt9EMX.js"></script>
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" />
+    <script type="module" crossorigin src="/apc-js-fm/assets/index-naqk38Ci.js"></script>
+    <link rel="stylesheet" crossorigin href="/apc-js-fm/assets/index-BNptEb63.css">
   </head>
   <body>
     <main class="wrapper">
       <article class="article-preview">
-        <img src="./images/drawers.jpg" alt="">
+        <img src="./images/drawers.jpg" alt="" />
         <div class="spot-copy content-block">
-          <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
-          <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room fell complete.
+          <h1>
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I've got some simple tips to help
+            you make any room fell complete.
+          </p>
         </div>
         <div class="author content-block">
-          <img src="./images/avatar-michelle.jpg" alt="">
+          <img src="./images/avatar-michelle.jpg" alt="" />
           <div>
             <h2>Michelle Appleton</h2>
             <time datetime="2020-07-28">28 Jun 2020</time>
