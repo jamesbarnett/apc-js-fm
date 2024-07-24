@@ -3,7 +3,7 @@
   font-display: swap;
   font-style: normal;
   font-weight: 500;
-  src: url("./fonts/manrope.medium.woff2") format("woff2");
+  src: url("fonts/manrope.medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -11,12 +11,11 @@
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/manrope.bold.woff2") format("woff2");
+  src: url("fonts/manrope.bold.woff2") format("woff2");
 }
 
 :root {
   --fs-base: 0.8125rem;
-  /*--fs-base: 0.75rem;*/
   --fs-small: 0.75rem;
   --fs-large: 0.9375rem;
 
@@ -27,10 +26,11 @@
   --clr-dark-blue: hsl(214, 17%, 51%);
   --clr-gray-blue-500: hsl(212, 23%, 69%);
   --clr-gray-blue-100: hsl(210, 46%, 95%);
-  /* 6E8098 */
+
   --border-radius: 1rem;
 }
 
+/* Andy Bell reset */
 /* Box sizing rules */
 *,
 *::before,
@@ -109,7 +109,7 @@ select {
   }
 }
 
-/*************************************** End resest, start utils *************/
+/*************************************** End reset, start utils **************/
 .flow > * + * {
   margin-top: var(--flow-space, 1em);
 }
@@ -120,7 +120,7 @@ body {
   color: var(--clr-gray-blue-900);
   background-color: var(--clr-gray-blue-100);
   font-family: Manrope, sans;
-  font-size: var(--fs-base)2;
+  font-size: var(--fs-base) 2;
   font-weight: var(--fs-500);
 }
 
@@ -145,7 +145,7 @@ main {
 }
 
 .article-preview > img:first-child {
-  border-radius: var(--border-radius) var(--border-radius) 0rem 0rem; /* var(--border-radius); */
+  border-radius: var(--border-radius) var(--border-radius) 0rem 0rem;
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -172,8 +172,6 @@ main {
   padding-bottom: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  flex-grow: 1;
-  flex-shrink: 1;
 }
 
 .author div {
@@ -191,7 +189,7 @@ main {
 
 .author h2 {
   font-size: var(--fs-base);
-  line-height: 1;
+  line-height: 1.6;
 }
 
 .author time {
@@ -203,11 +201,9 @@ main {
   display: block;
   border: 0;
   border-radius: 50%;
-  background: url("./images/icon-share.svg"),
-              var(--clr-gray-blue-100);
+  background: url("./images/icon-share.svg"), var(--clr-gray-blue-100);
   background-repeat: no-repeat;
-  background-size: fill;
-  background-position: center; 
+  background-position: center;
   height: 2rem;
   width: 2rem;
   margin-left: auto;
