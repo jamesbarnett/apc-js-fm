@@ -1,15 +1,29 @@
 import "./style.css";
 
-let shareButton = document.getElementById("share");
-shareButton.addEventListener("click", (e) => {
-  shareButton.style.display = "none";
+function showShare() {
+  const shareButton = document.getElementById("share");
+  shareButton.onclick = hideShare;
+  shareButton.setAttribute("data-style", "inverted");
+
+  const popupShareButton = document.getElementById("popup-share-btn");
+  popupShareButton.setAttribute("data-style", "inverted");
 
   let sharePopup = document.getElementById("share-popup");
-  sharePopup.style.display = "flex";
+  sharePopup.classList.toggle("closed");
+}
 
-  let avatar = document.querySelector(".author img:first-child");
-  avatar.style.display = "none";
+function hideShare() {
+  console.log("hideShare called");
+  let sharePopup = document.getElementById("share-popup");
+  sharePopup.classList.toggle("closed");
 
-  let authorInfo = document.querySelector(".author > div");
-  authorInfo.style.display = "none";
-});
+  const shareButton = document.getElementById("share");
+  shareButton.onclick = showShare;
+  shareButton.setAttribute("data-style", "normal");
+}
+
+let shareButton = document.getElementById("share");
+shareButton.onclick = showShare;
+
+let popUpShareButton = document.getElementById("popup-share-btn");
+popUpShareButton.onclick = hideShare;

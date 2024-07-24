@@ -21,16 +21,23 @@
             felt slightly bare and uninviting. I've got some simple tips to help
             you make any room fell complete.
           </p>
-        </div>
-        <div class="author content-block">
-          <img src="./images/avatar-michelle.jpg" alt="" />
-          <div>
-            <h2>Michelle Appleton</h2>
-            <time datetime="2020-07-28">28 Jun 2020</time>
+          <div class="author">
+            <img src="./images/avatar-michelle.jpg" alt="" />
+            <div>
+              <h2>Michelle Appleton</h2>
+              <time datetime="2020-07-28">28 Jun 2020</time>
+            </div>
           </div>
-          <button class="share-btn" data-style="normal" id="share"></button>
+          <button class="share-btn" data-style="normal" id="share">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+              <path
+                fill="#6E8098"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+              />
+            </svg>
+          </button>
         </div>
-        <div id="share-popup">
+        <div id="share-popup" class="closed">
           <p>Share</p>
           <img class="social" src="./images/icon-facebook.svg" alt="facebook" />
           <img class="social" src="./images/icon-twitter.svg" alt="twitter" />
@@ -39,11 +46,14 @@
             src="./images/icon-pinterest.svg"
             alt="pinterest"
           />
-          <button
-            class="share-btn"
-            data-style="inverted"
-            id="popup-share-button"
-          ></button>
+          <button class="share-btn" data-style="inverted" id="popup-share-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13">
+              <path
+                fill="#6E8098"
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+              />
+            </svg>
+          </button>
         </div>
       </article>
     </main>
