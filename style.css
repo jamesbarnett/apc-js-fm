@@ -121,7 +121,7 @@ body {
   background-color: var(--clr-gray-blue-100);
   font-family: Manrope, sans;
   font-size: var(--fs-base) 2;
-  font-weight: var(--fs-500);
+  font-weight: var(--fw-500);
 }
 
 main {
