@@ -16,7 +16,10 @@
 
 :root {
   --fs-base: 0.8125rem;
-  --fs-large: 1rem;
+  /*--fs-base: 0.75rem;*/
+  --fs-small: 0.75rem;
+  --fs-large: 0.9375rem;
+
   --fw-500: 500;
   --fw-700: 700;
 
@@ -24,7 +27,7 @@
   --clr-dark-blue: hsl(214, 17%, 51%);
   --clr-gray-blue-500: hsl(212, 23%, 69%);
   --clr-gray-blue-100: hsl(210, 46%, 95%);
-
+  /* 6E8098 */
   --border-radius: 1rem;
 }
 
@@ -114,8 +117,7 @@ select {
 body {
   display: flex;
   align-items: center;
-
-  color: var(--clr-gray-blue);
+  color: var(--clr-gray-blue-900);
   background-color: var(--clr-gray-blue-100);
   font-family: Manrope, sans;
   font-size: var(--fs-base)2;
@@ -139,28 +141,74 @@ main {
 
 .article-preview {
   background: white;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: var(--border-radius);
 }
 
-.article-preview img:first-child {
+.article-preview > img:first-child {
   border-radius: var(--border-radius) var(--border-radius) 0rem 0rem; /* var(--border-radius); */
-  height: auto;
-  object-fit: contain;
-}
-
-.author img:first-child {
-  border-radius: 50%;
-  height: 2.5em;
-  aspect-ratio: 1;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 -3em;
 }
 
 .spot-copy > h1 {
   font-size: var(--fs-large);
   line-height: 1.6;
   padding-bottom: 0.5rem;
+  padding-top: 1rem;
 }
 
 .spot-copy > p {
-  color: var(--clr-gray-blue-900);
+  color: var(--clr-dark-blue);
   font-size: var(--fs-base);
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.author div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.author img:first-child {
+  border-radius: 50%;
+  height: 2.5rem;
+  aspect-ratio: 1;
+}
+
+.author h2 {
+  font-size: var(--fs-base);
+  line-height: 1;
+}
+
+.author time {
+  color: var(--clr-dark-blue);
+  font-size: var(--fs-small);
+}
+
+.author #share {
+  display: block;
+  border: 0;
+  border-radius: 50%;
+  background: url("./images/icon-share.svg"),
+              var(--clr-gray-blue-100);
+  background-repeat: no-repeat;
+  background-size: fill;
+  background-position: center; 
+  height: 2rem;
+  width: 2rem;
+  margin-left: auto;
 }
