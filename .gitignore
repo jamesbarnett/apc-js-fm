@@ -8,6 +8,8 @@ pnpm-debug.log*
 pnpm-lock.yaml
 lerna-debug.log*
 
+.tool-versions
+
 node_modules
 dist
 dist-ssr
