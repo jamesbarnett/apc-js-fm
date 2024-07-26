@@ -238,6 +238,7 @@ svg {
   width: 2rem;
   margin-left: auto;
   align-self: center;
+  margin-top: 1rem;
 }
 
 .author #share {
